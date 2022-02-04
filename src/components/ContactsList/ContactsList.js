@@ -1,10 +1,13 @@
 
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { deleteContact } from '../../redux/action';
+import { deleteContact, fetchContacts } from '../../redux/contacts-operations';
 import ContactItem from '../ContactItem/ContactItem';
 
-const ContactList = ({ contacts, onRemoveContact }) => {
+const ContactList = ({ contacts, onRemoveContact, onfetch}) => {
   
+  onfetch();
+
   return (
     <ul>
       {contacts.map(contact => (
@@ -26,7 +29,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  onRemoveContact: (id) => dispatch(deleteContact(id))
+  onRemoveContact: (id) => dispatch(deleteContact(id)),
+  onFetch: ()=> dispatch(fetchContacts()),
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(ContactList);

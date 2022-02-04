@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ContactItem = ({ contact, onRemoveContact }) => {
+
+  // console.log('CONTACT:',contact)
  
   return (
     <li>

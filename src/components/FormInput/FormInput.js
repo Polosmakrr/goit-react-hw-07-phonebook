@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addContact } from '../../redux/action';
-
+import { addContact, fetchContacts } from '../../redux/contacts-operations';
 
 const FormInput = ({onSubmit}) =>{
   
@@ -19,6 +18,7 @@ const FormInput = ({onSubmit}) =>{
      event.preventDefault();
 
      onSubmit({ name, phone });
+     
      reset();
    };
   

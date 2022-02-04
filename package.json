@@ -4,10 +4,11 @@
   "private": true,
   "homepage": "https://Polosmakrr.github.io/goit-react-hw-07-phonebook",
   "dependencies": {
-    "@reduxjs/toolkit": "^1.7.1",
+    "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.25.0",
     "gh-pages": "^3.2.3",
     "nanoid": "^3.1.30",
     "prop-types": "^15.8.0",
