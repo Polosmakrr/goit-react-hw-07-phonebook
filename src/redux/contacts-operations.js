@@ -10,13 +10,15 @@ export const fetchContacts = () => dispatch => {
 
     axios.get('/contacts')
 
-        .then(({ data }) =>
-            dispatch(actions.fetchContactsSuccess(data)))
+        .then(({ data }) => {
+
+            dispatch(actions.fetchContactsSuccess(data))
+        })
+        
         .catch(error =>
             dispatch(actions.fetchContactsError(error)))
     
 };
-
 
 export const addContact = (data) => dispatch => {
 
@@ -34,10 +36,15 @@ export const addContact = (data) => dispatch => {
 
 export const deleteContact = (id) => dispatch => {
     
+    console.log('Deleting-ID:', id);
+
     dispatch(actions.deleteContactRequest());
 
-    axios.delete(`/contacts,${id}`)
-        .then(() => actions.deleteContactSuccess(id))
+    axios.delete(`/contacts/${id}`)
+        .then(() => {
+            console.log('ID:',id)
+            actions.deleteContactSuccess(id)
+        })
     
     .catch(error=>dispatch(actions.deleteContactError(error)))
 

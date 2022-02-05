@@ -1,7 +1,7 @@
 import { createAction } from "@reduxjs/toolkit"
 
 export const fetchContactsRequest = createAction('fetchRequest');
-export const fetchContactsSuccess = createAction('fetchSaccess');
+export const fetchContactsSuccess = createAction('fetchSuccess');
 export const fetchContactsError = createAction('fetchError');
 
 export const addContactRequest = createAction('addRequest');
@@ -13,8 +13,5 @@ export const deleteContactSuccess = createAction('deleteSaccess');
 export const deleteContactError = createAction('deleteError');
 
 
-
-
-
-export const addFilter = createAction('ADD_FILTER');
+export const changeFilter = createAction('changeFilter');
 

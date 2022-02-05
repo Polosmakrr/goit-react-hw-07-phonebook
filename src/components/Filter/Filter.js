@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addFilter } from '../../redux/action';
+import { changeFilter } from '../../redux/action';
 
 const Filter = ({ value, onChangeFilter }) => {
+
   return (
     <form>
       <label>
@@ -20,12 +21,13 @@ Filter.propTypes = {
   onChangeFilter: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  value: state.contacts.filter,
-});
+const mapStateToProps = (state) => {
+ 
+  return{value: state.contacts.filter}
+};
 
 const mapDispatchToProps = dispatch => ({
-  onChangeFilter:(event)=>dispatch(addFilter(event.target.value))
+  onChangeFilter:(event)=>dispatch(changeFilter(event.target.value))
 });
 
 

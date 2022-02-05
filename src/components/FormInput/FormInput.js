@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { addContact, fetchContacts } from '../../redux/contacts-operations';
+import { addContact } from '../../redux/contacts-operations';
 
 const FormInput = ({onSubmit}) =>{
   

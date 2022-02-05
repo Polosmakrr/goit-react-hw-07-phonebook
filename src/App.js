@@ -4,29 +4,19 @@ import ContactsList from './components/ContactsList/ContactsList';
 import Filter from './components/Filter/Filter';
 import './App.css';
 import { connect } from 'react-redux';
-import { deleteContact, fetchContacts,} from '../src/redux/contacts-operations';
+import { fetchContacts,} from '../src/redux/contacts-operations';
 
 
 
-const App=({fetchContacts})=> {
-
-
-  // useEffect(() => {
-  //   fetchContacts();
-
-  //   console.log('GET START:');
-
-  //   console.log(fetchContacts)
-  // },[])
-  
+const App=({fetchContacts, contacts})=> {
 
    return (
       <>
        <h1>Phone Book</h1>
-        <FormInput />
+       <FormInput onfetch={fetchContacts}/>
         <h2>Contacts</h2>
-       {/* {contacts.contacts.length >= 1 &&
-         <Filter/>t} */}
+       {contacts.length &&
+         <Filter/>}
        <ContactsList onfetch={ fetchContacts }/>
       </>
     );
@@ -34,12 +24,12 @@ const App=({fetchContacts})=> {
 
 
 
-// const mapStateToProps = (state) => ({
-//   contacts:state.contacts.items,
-// });
+const mapStateToProps = (state) => ({
+  contacts:state.contacts.items,
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchContacts: () => dispatch(fetchContacts()),
 })
 
-export default connect(null,mapDispatchToProps)(App)
+export default connect(mapStateToProps,mapDispatchToProps)(App)

@@ -6,22 +6,26 @@ import ContactItem from '../ContactItem/ContactItem';
 
 const ContactList = ({ contacts, onRemoveContact, onfetch}) => {
   
-  onfetch();
+  useEffect(() => {
+    onfetch(); 
+  }, [])
 
   return (
     <ul>
-      {contacts.map(contact => (
-        <ContactItem key={contact.id} contact={contact} onRemoveContact={onRemoveContact} />
+      {contacts.map(contact => ( contact.map(c=>(<ContactItem key={c.id} contact={c} onRemoveContact={onRemoveContact} />))
+        
       ))}
     </ul>
   );
 };
 
 const mapStateToProps = (state) => {
-  const { filter, items } = state.contacts;
+  const { items, filter } = state.contacts;
+
   const normalizedFilter = filter.toLowerCase();
-  const filteredContacts = items.filter(((item) =>
-    item.data.name.toLowerCase().includes(normalizedFilter)))
+  const filteredContacts = items.map(((item) =>
+    item.filter(itm =>itm.name.toLowerCase().includes(normalizedFilter))
+  ))
 
   return {
     contacts: filteredContacts,

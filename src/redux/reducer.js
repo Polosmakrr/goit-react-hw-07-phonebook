@@ -1,16 +1,17 @@
-import { combineReducers } from "@reduxjs/toolkit";
+import { combineReducers} from "@reduxjs/toolkit";
+
 
 const items = (state = [], {type,payload} )=> {
     switch (type) {
+        case 'fetchSuccess':(_,{payload})=> payload;
+        
         case 'addSuccess':
-            return [...state, payload];
+            return  [...state,payload];
 
         case 'deleteSuccess':
             
             return state.filter(cont => cont.id !== payload);
         
-        case 'fetchSuccess':
-            return payload;
         
        default: return state;
 }
@@ -18,24 +19,17 @@ const items = (state = [], {type,payload} )=> {
 
 const filter = (state = '', { type, payload }) => {
     switch (type) {
-        case 'addFilter':
+        case 'changeFilter':
 
-            return payload
-        
-        default: return state;
-    }
-};
-
-const fetch = (_, { payload }) => {
-    switch (type) {
-        case 'fetchSaccess':
             return payload
         
         default: return state;
     }
 };
   
-export default combineReducers({
-    items:items,
-    filter:filter,
+const contactsReducer = combineReducers({
+    items: items,
+    filter: filter,
 });
+
+export default contactsReducer

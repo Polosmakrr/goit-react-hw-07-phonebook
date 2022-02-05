@@ -1,6 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
-import { persistStore, persistReducer,
+import { 
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -8,19 +8,12 @@ import { persistStore, persistReducer,
   PURGE,
   REGISTER 
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+
 import contactsReducer from './reducer';
 
 
-// const contactsPersistConfig = {
-//     key: 'contacts',
-//     storage,
-//     blacklist:["filter"],
-// };
-
  const store = configureStore({
    reducer: {
-    //  contacts: persistReducer(contactsPersistConfig, contactsReducer),
      contacts: contactsReducer,
    },
 
@@ -30,12 +23,6 @@ import contactsReducer from './reducer';
       }
     })
  })
-
-
-// const persistor = persistStore(store)
- 
-
-// export default { store, persistor };
 
 export default store;
 
