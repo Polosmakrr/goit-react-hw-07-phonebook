@@ -41,10 +41,9 @@ export const deleteContact = (id) => dispatch => {
     dispatch(actions.deleteContactRequest());
 
     axios.delete(`/contacts/${id}`)
-        .then(() => {
-            console.log('ID:',id)
-            actions.deleteContactSuccess(id)
-        })
+        .then(() => 
+           dispatch(actions.deleteContactSuccess(id))
+        )
     
     .catch(error=>dispatch(actions.deleteContactError(error)))
 
