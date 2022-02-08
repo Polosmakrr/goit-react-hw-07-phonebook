@@ -10,7 +10,7 @@ export const fetchContacts = () => dispatch => {
 
     axios.get('/contacts')
 
-        .then(({ data }) => {
+        .then(( {data} ) => {
 
             dispatch(actions.fetchContactsSuccess(data))
         })
