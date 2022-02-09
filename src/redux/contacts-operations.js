@@ -34,8 +34,6 @@ export const addContact = (data) => dispatch => {
 };
 
 export const deleteContact = (id) => dispatch => {
-    
-    console.log('Deleting-ID:', id);
 
     dispatch(actions.deleteContactRequest());
 
