@@ -3,7 +3,7 @@ import { combineReducers} from "@reduxjs/toolkit";
 
 const items = (state = [], {type,payload} )=> {
     switch (type) {
-        case 'fetchSuccess':(_,{payload})=> payload;
+        case 'fetchSuccess': {return payload};
         
         case 'addSuccess':
             return  [...state,payload];
@@ -11,8 +11,7 @@ const items = (state = [], {type,payload} )=> {
         case 'deleteSuccess':
             
             return state.filter(cont => cont.id !== payload);
-        
-        
+               
        default: return state;
 }
 };

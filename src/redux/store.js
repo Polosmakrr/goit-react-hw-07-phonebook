@@ -1,5 +1,4 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { 
   FLUSH,
   REHYDRATE,
@@ -10,7 +9,6 @@ import {
 } from 'redux-persist';
 
 import contactsReducer from './reducer';
-
 
  const store = configureStore({
    reducer: {

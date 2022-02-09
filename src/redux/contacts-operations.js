@@ -5,7 +5,6 @@ axios.defaults.baseURL = 'https://61fd3dd4f62e220017ce43e2.mockapi.io/api/v1/';
 
 export const fetchContacts = () => dispatch => {
 
-    console.log("fetchContacts");
     dispatch(actions.fetchContactsRequest());
 
     axios.get('/contacts')
@@ -16,8 +15,8 @@ export const fetchContacts = () => dispatch => {
         })
         
         .catch(error =>
+
             dispatch(actions.fetchContactsError(error)))
-    
 };
 
 export const addContact = (data) => dispatch => {
