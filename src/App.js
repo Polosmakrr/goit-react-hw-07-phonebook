@@ -15,7 +15,7 @@ const App=({fetchContacts, contacts})=> {
        <h1>Phone Book</h1>
        <FormInput onfetch={fetchContacts}/>
         <h2>Contacts</h2>
-       {contacts.length &&
+       {contacts.length >=1 &&
          <Filter/>}
        <ContactsList onfetch={ fetchContacts }/>
       </>
