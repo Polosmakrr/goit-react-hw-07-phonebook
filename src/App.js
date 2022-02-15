@@ -6,8 +6,6 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fetchContacts,} from '../src/redux/contacts-operations';
 
-
-
 const App=({fetchContacts, contacts})=> {
 
    return (
@@ -21,8 +19,6 @@ const App=({fetchContacts, contacts})=> {
       </>
     );
 }
-
-
 
 const mapStateToProps = (state) => ({
   contacts:state.contacts.items,
