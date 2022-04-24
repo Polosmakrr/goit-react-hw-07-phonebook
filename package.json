@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-2-phonebook",
+  "name": "chat",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Polosmakrr.github.io/goit-react-hw-07-phonebook",
+  "homepage": "https://Polosmakrr.github.io/chat",
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",
     "@testing-library/jest-dom": "^5.16.1",
